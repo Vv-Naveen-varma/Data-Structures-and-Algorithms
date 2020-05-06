@@ -64,6 +64,11 @@ class LinkedList:
         if index == 0:
             self.head = self.head['next']
             return self.printlist()
+        elif index == self.length-1:
+            leader = self.traversetoIndex(index - 1)
+            leader['next'] = None
+            self.tail = leader
+            return self.printlist()
         else:
             leader = self.traversetoIndex(index-1)
             removeNode = leader['next']
@@ -71,6 +76,21 @@ class LinkedList:
             leader['next'] = attachNode
             self.length -= 1
             return self.printlist()
+
+    def reverse(self):
+        if self.length == 1:
+            return self.printlist()
+        first = self.head
+        self.tail = self.head
+        second = first['next']
+        while second:
+            temp = second['next']
+            second['next'] = first
+            first = second
+            second = temp
+        self.head['next'] = None
+        self.head = first
+        return self.printlist()
 
 
 l = LinkedList(10)
@@ -80,3 +100,5 @@ l.prepend(1)
 l.printlist()
 l.insert(2,3) #insert 2 at index 3
 l.remove(4) # remove at index 2
+l.reverse() #reversing the LinkedList
+print(l.head)
