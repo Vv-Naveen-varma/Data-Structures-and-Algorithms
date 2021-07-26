@@ -2,4 +2,5 @@
 
 Implementd using Python
 
-> Different sorting algorithms are built from scratch
+> Different algorithms like Binary search tree are built from scratch
+> Datastructures 
