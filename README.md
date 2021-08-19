@@ -4,4 +4,4 @@ Implementd using Python from scratch for better understanding
 
 > Different algorithms like Binary search tree
 
-> Datastructures like Stack, Queue, Linked List
+> Data structures like Stack, Queue, Linked List
